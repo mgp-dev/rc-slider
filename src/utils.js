@@ -1,9 +1,9 @@
-import { findDOMNode } from 'react-dom';
+import ReactDOM from 'react-dom';
 import keyCode from 'rc-util/lib/KeyCode';
 
 export function isEventFromHandle(e, handles) {
   return Object.keys(handles)
-    .some(key => e.target === findDOMNode(handles[key]));
+    .some(key => e.target === ReactDOM.findDOMNode(handles[key]));
 }
 
 export function isValueOutOfRange(value, { min, max }) {

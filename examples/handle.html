@@ -1,14 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src=""></script>
+    <meta charset="utf-8">
+    <title>React Quick Prototyping</title>
+
+    <link rel="stylesheet" href="../build/common.css">
 </head>
 <body>
+<div id="root"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.min.js"></script>
+<script src="https://unpkg.com/babel-transform-in-browser@6.4.6/dist/btib.min.js"></script>
+<script src="../dist/how-long-till-lunch.umd.js"></script>
+<script type="text/es2015">
+
+        var Range = RcSlider.Range;
+        // Your playground code goes here, e.g.:
+        function App ({ title }) {
+            return (
+                <Range />
+            );
+        }
+
+        ReactDOM.render(
+            <App title="Hello World" />,
+            document.getElementById('root')
+        );
+    </script>
 </body>
 </html>
