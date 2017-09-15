@@ -23,8 +23,9 @@
     "dist"
   ],
   "license": "MIT",
-  "main": "./lib/index.js",
-  "module": "./es/index",
+  "main": "dist/how-long-till-lunch.cjs.js",
+  "module": "dist/how-long-till-lunch.esm.js",
+  "browser": "dist/how-long-till-lunch.umd.js",
   "style": "./assets/index.css",
   "config": {
     "port": 8005,
@@ -37,6 +38,8 @@
   },
   "scripts": {
     "build": "rc-tools run build",
+    "ts": "tsc -p .",
+    "roll": "rollup -c",
     "dist": "rc-tools run dist",
     "gh-pages": "rc-tools run gh-pages",
     "start": "rc-tools run server",
@@ -56,6 +59,11 @@
     }
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/node": "^8.0.28",
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
+    "@types/warning": "^3.0.0",
     "coveralls": "^2.11.15",
     "enzyme": "^2.8.0",
     "enzyme-to-json": "^1.5.1",
@@ -64,11 +72,13 @@
     "rc-tools": "6.x",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "react-test-renderer": "^15.5.4"
+    "react-test-renderer": "^15.5.4",
+    "rollup": "^0.49.3",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-jsx": "^1.0.3",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript2": "^0.5.2"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "dependencies": {
     "babel-runtime": "6.x",
     "classnames": "^2.2.5",

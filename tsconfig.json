@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+//    "declaration": true,
+    "outDir": "lib",
+    "jsx": "react",
+    "sourceMap": true,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+//    "types": ["node"],
+    "allowJs": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "test",
+    "lib"
+  ]
+}
