@@ -8,5 +8,5 @@ Slider.Range = Range;
 Slider.Handle = Handle;
 Slider.createSliderWithTooltip = createSliderWithTooltip;
 Slider.Tooltip = createSliderWithTooltip;
-export default Slider;
-export { Range, Handle, createSliderWithTooltip, Tooltip };
+// export default Slider;
+export { Slider, Range, Handle, createSliderWithTooltip, Tooltip };

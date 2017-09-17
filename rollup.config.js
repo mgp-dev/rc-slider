@@ -14,14 +14,18 @@ export default [
     },
     name: 'Slider',
     external: ["react", "react-dom"],
+    globals: {
+      "react": 'React',
+      "react-dom": 'ReactDOM'
+    },
     plugins: [
       typescript({
-        include: [ "src/*.js+(|x)", "src/**/*.js+(|x)" ],
+        include: ["src/*.js+(|x)", "src/**/*.js+(|x)"],
       }),
       resolve(),
       commonjs(),
       replace({
-        'process.env.NODE_ENV': JSON.stringify( 'production' )
+        'process.env.NODE_ENV': JSON.stringify('production')
       })
     ]
   },

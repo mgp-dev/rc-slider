@@ -19,7 +19,6 @@
     const Range = createSliderWithTooltip(Slider.Range);
     const Handle = Slider.Handle;
     const Tooltip = Slider.Tooltip;
-    const SliderCompo = Slider.default;
 
     const handle = (props) => {
       const { value, dragging, index, ...restProps } = props;
@@ -41,7 +40,7 @@
       <div>
         <div style={wrapperStyle}>
           <p>Slider with custom handle</p>
-          <SliderCompo min={0} max={20} defaultValue={3} handle={handle} />
+          <Slider.Slider min={0} max={20} defaultValue={3} handle={handle} />
         </div>
         <div style={wrapperStyle}>
           <p>Range with custom handle</p>
