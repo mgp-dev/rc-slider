@@ -7,6 +7,7 @@
     "lib": ["es2015", "dom"],
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
 //    "types": ["node"],
     "allowJs": true,
     "moduleResolution": "node",

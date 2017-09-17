@@ -33,13 +33,17 @@
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/*"
-    ],
     "transform": {
-      "\\.tsx?$": "./node_modules/rc-tools/scripts/jestPreprocessor.js",
-      "\\.jsx?$": "./node_modules/rc-tools/scripts/jestPreprocessor.js"
-    }
+      "^.+\\.jsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
   },
   "devDependencies": {
     "enzyme": "^2.8.0",
@@ -53,7 +57,8 @@
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-typescript2": "^0.5.2"
+    "rollup-plugin-typescript2": "^0.5.2",
+    "ts-jest": "^21.0.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
