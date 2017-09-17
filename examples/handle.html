@@ -15,18 +15,42 @@
 <script src="../dist/how-long-till-lunch.umd.js"></script>
 <script type="text/es2015">
 
-        var Range = RcSlider.Range;
-        // Your playground code goes here, e.g.:
-        function App ({ title }) {
-            return (
-                <Range />
-            );
-        }
+    const createSliderWithTooltip = Slider.createSliderWithTooltip;
+    const Range = createSliderWithTooltip(Slider.Range);
+    const Handle = Slider.Handle;
+    const Tooltip = Slider.Tooltip;
+    const SliderCompo = Slider.default;
 
-        ReactDOM.render(
-            <App title="Hello World" />,
-            document.getElementById('root')
-        );
-    </script>
+    const handle = (props) => {
+      const { value, dragging, index, ...restProps } = props;
+      return (
+        <Tooltip
+          prefixCls="rc-slider-tooltip"
+          overlay={value}
+          visible={dragging}
+          placement="top"
+          key={index}
+        >
+          <Handle value={value} {...restProps} />
+        </Tooltip>
+      );
+    };
+
+    const wrapperStyle = { width: 400, margin: 50 };
+    ReactDOM.render(
+      <div>
+        <div style={wrapperStyle}>
+          <p>Slider with custom handle</p>
+          <SliderCompo min={0} max={20} defaultValue={3} handle={handle} />
+        </div>
+        <div style={wrapperStyle}>
+          <p>Range with custom handle</p>
+          <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
+        </div>
+      </div>,
+      document.getElementById('root')
+    );
+
+</script>
 </body>
 </html>

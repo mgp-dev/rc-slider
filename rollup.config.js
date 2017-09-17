@@ -12,7 +12,7 @@ export default [
       file: pkg.browser,
       format: 'umd'
     },
-    name: 'RcSlider',
+    name: 'Slider',
     external: ["react", "react-dom"],
     plugins: [
       typescript({
