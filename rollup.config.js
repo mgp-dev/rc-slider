@@ -30,21 +30,21 @@ export default [
     ]
   },
   // commonjs
-  // {
-  //   input: 'src/index.js',
-  //   external: ["react", "react-dom"],
-  //   output: [
-  //     {file: pkg.main, format: 'cjs'},
-  //   ],
-  //   plugins: [
-  //     typescript({
-  //       include: ["src/*.js+(|x)", "src/**/*.js+(|x)"],
-  //     }),
-  //     resolve(),
-  //     commonjs(),
-  //     replace({
-  //       'process.env.NODE_ENV': JSON.stringify('production')
-  //     })
-  //   ]
-  // },
+  {
+    input: 'src/index.js',
+    external: ["react", "react-dom"],
+    output: [
+      {file: pkg.main, format: 'cjs'},
+    ],
+    plugins: [
+      typescript({
+        include: ["src/*.js+(|x)", "src/**/*.js+(|x)"],
+      }),
+      resolve(),
+      commonjs(),
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      })
+    ]
+  }
 ];
