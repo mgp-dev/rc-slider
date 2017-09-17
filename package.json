@@ -23,9 +23,9 @@
     "dist"
   ],
   "license": "MIT",
-  "main": "dist/how-long-till-lunch.cjs.js",
-  "module": "dist/how-long-till-lunch.esm.js",
-  "browser": "dist/how-long-till-lunch.umd.js",
+  "main": "dist/rc-slider.cjs.js",
+  "module": "dist/rc-slider.esm.js",
+  "browser": "dist/rc-slider.umd.js",
   "scripts": {
     "build": "rollup -c",
     "less": "lessc assets/index.less dist/common.css",
