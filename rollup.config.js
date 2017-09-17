@@ -28,12 +28,18 @@ export default [
   // commonjs
   // {
   //   input: 'src/index.js',
+  //   external: ["react", "react-dom"],
   //   output: [
-  //     { file: pkg.main, format: 'cjs' },
+  //     {file: pkg.main, format: 'cjs'},
   //   ],
   //   plugins: [
   //     typescript({
-  //       target: "es6"
+  //       include: ["src/*.js+(|x)", "src/**/*.js+(|x)"],
+  //     }),
+  //     resolve(),
+  //     commonjs(),
+  //     replace({
+  //       'process.env.NODE_ENV': JSON.stringify('production')
   //     })
   //   ]
   // },
