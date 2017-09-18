@@ -34,7 +34,7 @@ const config = [
   // commonjs
   {
     input: 'src/index.js',
-    external: ["react", "react-dom", "classnames", "create-react-class", "dom-align", "prop-types", "rc-utils"],
+    external: ["react", "react-dom", "classnames", "create-react-class", "dom-align", "prop-types"],
     output: [
       {file: pkg.main, format: 'cjs'},
     ],
