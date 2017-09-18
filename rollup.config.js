@@ -3,13 +3,15 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import typescript from 'rollup-plugin-typescript2';
+import uglify from 'rollup-plugin-uglify';
 
-export default [
+const env = process.env.NODE_ENV
+const config = [
   // browser-friendly UMD build
   {
     input: 'src/index.js',
     output: {
-      file: pkg.browser,
+      file: pkg['umd:main'],
       format: 'umd'
     },
     name: 'Slider',
@@ -32,7 +34,7 @@ export default [
   // commonjs
   {
     input: 'src/index.js',
-    external: ["react", "react-dom"],
+    external: ["react", "react-dom", "classnames", "create-react-class", "dom-align", "prop-types", "rc-utils"],
     output: [
       {file: pkg.main, format: 'cjs'},
     ],
@@ -40,7 +42,9 @@ export default [
       typescript({
         include: ["src/*.js+(|x)", "src/**/*.js+(|x)"],
       }),
-      resolve(),
+      resolve({
+        jsnext: true
+      }),
       commonjs(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('production')
@@ -48,3 +52,18 @@ export default [
     ]
   }
 ];
+
+if (env === 'production') {
+  config.plugins.push(
+    uglify({
+      compress: {
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        warnings: false
+      }
+    })
+  )
+}
+
+export default config;
