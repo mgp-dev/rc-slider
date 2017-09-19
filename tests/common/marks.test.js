@@ -1,8 +1,8 @@
 /* eslint-disable max-len, no-undef */
 import React from 'react';
 import { mount } from 'enzyme';
-import Slider from '../../src';
-const { Range } = Slider;
+import Range from '../../src/Range';
+import Slider from '../../src/Slider';
 
 describe('marks', () => {
   it('should render marks correctly when `marks` is not an empty object', () => {
