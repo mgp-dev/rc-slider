@@ -1,5 +1,5 @@
 {
-  "name": "@mpg/rc-slider",
+  "name": "@mgp/rc-slider",
   "version": "0.0.1",
   "description": "Slider UI component for React",
   "keywords": [
@@ -10,12 +10,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:mgp-dev/rc-slider.git"
+    "url": "git+ssh://git@github.com/mgp-dev/rc-slider.git"
   },
   "files": [
-    "assets/*.css",
-    "lib",
-    "es",
     "dist"
   ],
   "license": "MIT",
@@ -66,5 +63,14 @@
     "rc-util": "^4.0.4",
     "shallowequal": "^1.0.1",
     "warning": "^3.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/mgp-dev/rc-slider/issues"
+  },
+  "homepage": "https://github.com/mgp-dev/rc-slider#readme",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "author": ""
 }
