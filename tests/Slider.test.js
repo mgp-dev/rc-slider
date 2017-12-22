@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, mount } from 'enzyme';
 import { renderToJson } from 'enzyme-to-json';
-import keyCode from 'rc-util/lib/KeyCode';
+import keyCode from '../src/util/KeyCode';
 import Slider from '../src/Slider';
 
 describe('Slider', () => {
