@@ -22,6 +22,7 @@
   "scripts": {
     "rollup": "rollup -c",
     "less": "lessc assets/index.less dist/index.css",
+    "watch": "yarn run rollup -- --watch",
     "build": "yarn run less && yarn run rollup",
     "test": "jest",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
