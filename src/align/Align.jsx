@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import align from 'dom-align';
+import addEventListener from '../util/addEventListener';
 import isWindow from './isWindow';
 
 function buffer(fn, ms) {
@@ -89,7 +90,7 @@ class Align extends Component {
   startMonitorWindowResize() {
     if (!this.resizeHandler) {
       this.bufferMonitor = buffer(this.forceAlign, this.props.monitorBufferTime);
-      this.resizeHandler = window.addEventListener('resize', this.bufferMonitor);
+      this.resizeHandler = addEventListener(window, 'resize', this.bufferMonitor);
     }
   }
 
@@ -107,7 +108,7 @@ class Align extends Component {
       const source = ReactDOM.findDOMNode(this);
       props.onAlign(source, align(source, props.target(), props.align));
     }
-  };
+  }
 
   render() {
     const { childrenProps, children } = this.props;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import createReactClass from 'create-react-class';
 import domContains from '../util/domContains';
+import addEventListener from '../util/addEventListener';
 import Popup from './Popup';
 import { getAlignFromPlacement, getPopupClassNameFromAlign } from './utils';
 import getContainerRenderMixin from '../util/containerRenderMixin';
@@ -167,12 +168,14 @@ const Trigger = createReactClass({
       let currentDocument;
       if (!this.clickOutsideHandler && this.isClickToHide()) {
         currentDocument = props.getDocument();
-        this.clickOutsideHandler = currentDocument.addEventListener('mousedown', this.onDocumentClick);
+        this.clickOutsideHandler = addEventListener(currentDocument,
+          'mousedown', this.onDocumentClick);
       }
       // always hide on mobile
       if (!this.touchOutsideHandler) {
         currentDocument = currentDocument || props.getDocument();
-        this.touchOutsideHandler = currentDocument.addEventListener('touchstart', this.onDocumentClick);
+        this.touchOutsideHandler = addEventListener(currentDocument,
+          'touchstart', this.onDocumentClick);
       }
       return;
     }
