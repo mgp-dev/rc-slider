@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import keyCode from 'rc-util/lib/KeyCode';
+import keyCode from './util/KeyCode';
 
 export function isEventFromHandle(e, handles) {
   return Object.keys(handles)

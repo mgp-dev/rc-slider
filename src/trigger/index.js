@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import createReactClass from 'create-react-class';
-import contains from 'rc-util/lib/Dom/contains';
-import addEventListener from 'rc-util/lib/Dom/addEventListener';
+import domContains from '../util/domContains';
 import Popup from './Popup';
 import { getAlignFromPlacement, getPopupClassNameFromAlign } from './utils';
-import getContainerRenderMixin from 'rc-util/lib/getContainerRenderMixin';
+import getContainerRenderMixin from '../util/containerRenderMixin';
 
 function noop() {
 }
@@ -168,14 +167,12 @@ const Trigger = createReactClass({
       let currentDocument;
       if (!this.clickOutsideHandler && this.isClickToHide()) {
         currentDocument = props.getDocument();
-        this.clickOutsideHandler = addEventListener(currentDocument,
-          'mousedown', this.onDocumentClick);
+        this.clickOutsideHandler = currentDocument.addEventListener('mousedown', this.onDocumentClick);
       }
       // always hide on mobile
       if (!this.touchOutsideHandler) {
         currentDocument = currentDocument || props.getDocument();
-        this.touchOutsideHandler = addEventListener(currentDocument,
-          'touchstart', this.onDocumentClick);
+        this.touchOutsideHandler = currentDocument.addEventListener('touchstart', this.onDocumentClick);
       }
       return;
     }
@@ -207,7 +204,7 @@ const Trigger = createReactClass({
     // react bug?
     if (e.relatedTarget && !e.relatedTarget.setTimeout &&
       this._component &&
-      contains(this._component.getPopupDomNode(), e.relatedTarget)) {
+      domContains(this._component.getPopupDomNode(), e.relatedTarget)) {
       return;
     }
     this.delaySetPopupVisible(false, this.props.mouseLeaveDelay);

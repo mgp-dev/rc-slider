@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import addEventListener from 'rc-util/lib/Dom/addEventListener';
 import classNames from 'classnames';
 import warning from 'warning';
 import Steps from './Steps';
@@ -138,13 +137,13 @@ export default function createSlider(Component) {
 
     addDocumentTouchEvents() {
       // just work for Chrome iOS Safari and Android Browser
-      this.onTouchMoveListener = addEventListener(document, 'touchmove', this.onTouchMove);
-      this.onTouchUpListener = addEventListener(document, 'touchend', this.onEnd);
+      this.onTouchMoveListener = document.addEventListener('touchmove', this.onTouchMove);
+      this.onTouchUpListener = document.addEventListener('touchend', this.onEnd);
     }
 
     addDocumentMouseEvents() {
-      this.onMouseMoveListener = addEventListener(document, 'mousemove', this.onMouseMove);
-      this.onMouseUpListener = addEventListener(document, 'mouseup', this.onEnd);
+      this.onMouseMoveListener = document.addEventListener('mousemove', this.onMouseMove);
+      this.onMouseUpListener = document.addEventListener('mouseup', this.onEnd);
     }
 
     removeDocumentEvents() {

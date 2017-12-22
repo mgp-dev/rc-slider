@@ -60,7 +60,6 @@
     "create-react-class": "^15.6.0",
     "dom-align": "^1.6.4",
     "prop-types": "^15.5.4",
-    "rc-util": "^4.0.4",
     "shallowequal": "^1.0.1",
     "warning": "^3.0.0"
   },
