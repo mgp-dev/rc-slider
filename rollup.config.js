@@ -9,7 +9,7 @@ const env = process.env.NODE_ENV;
 const config = [
   // browser-friendly UMD build
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       file: pkg['umd:main'],
       format: 'umd'
@@ -21,9 +21,7 @@ const config = [
       "react-dom": 'ReactDOM'
     },
     plugins: [
-      typescript({
-        include: ["src/*.js+(|x)", "src/**/*.js+(|x)"],
-      }),
+      typescript(),
       resolve(),
       commonjs(),
       replace({
@@ -33,15 +31,13 @@ const config = [
   },
   // commonjs
   {
-    input: 'src/index.js',
-    external: ["react", "react-dom", "classnames", "create-react-class", "dom-align", "prop-types"],
+    input: 'src/index.ts',
+    external: ["react", "react-dom", "classnames", "shallow-equal-object", "react-popper"],
     output: [
       {file: pkg.main, format: 'cjs'},
     ],
     plugins: [
-      typescript({
-        include: ["src/*.js+(|x)", "src/**/*.js+(|x)"],
-      }),
+      typescript(),
       resolve({
         jsnext: true
       }),

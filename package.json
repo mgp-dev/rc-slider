@@ -41,6 +41,9 @@
     ]
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/react": "^16.0.31",
+    "@types/react-dom": "^16.0.3",
     "enzyme": "^2.8.0",
     "enzyme-to-json": "^1.5.1",
     "jest": "^20.0.0",
@@ -58,11 +61,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "create-react-class": "^15.6.0",
-    "dom-align": "^1.6.4",
-    "prop-types": "^15.5.4",
-    "shallowequal": "^1.0.1",
-    "warning": "^3.0.0"
+    "react-popper": "^0.7.4",
+    "shallow-equal-object": "^1.1.1"
   },
   "bugs": {
     "url": "https://github.com/mgp-dev/rc-slider/issues"
