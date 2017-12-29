@@ -10,7 +10,6 @@ Lot of dependencies have been removed, the component has tooltips by default via
 The build uses rollup.
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
 
 [npm-image]: http://img.shields.io/npm/v/@mgp/rc-slider.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/@mgp/rc-slider
@@ -32,7 +31,7 @@ The build uses rollup.
 yarn add @mgp/rc-slider
 ```
 
-[![rc-slider](https://nodei.co/npm/rc-slider.png)](https://npmjs.org/package/@mgp/rc-slider)
+[![rc-slider](https://nodei.co/npm/@mgp/rc-slider.png)](https://npmjs.org/package/@mgp/rc-slider)
 
 ## Usage
 
