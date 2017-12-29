@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import {CSSProperties} from "react";
 
-interface TrackProps {
+export interface TrackProps {
   className: string
   included: boolean
   vertical: boolean

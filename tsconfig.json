@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-//    "declaration": true,
+    "declaration": true,
     "outDir": "lib",
     "jsx": "react",
     "sourceMap": true,
@@ -9,7 +9,6 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
 //    "types": ["node"],
-    "allowJs": true,
     "moduleResolution": "node",
     "target": "es5"
   },

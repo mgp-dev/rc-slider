@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {ClassAttributes, CSSProperties, ReactNode} from 'react';
 import {MarkOpt} from './common/types';
 import {noop} from './utils';
@@ -35,7 +35,7 @@ export interface SliderProps {
   activeDotStyle: CSSProperties,
 }
 
-interface DefaultSliderProps {
+export interface DefaultSliderProps {
   prefixCls: string
   className: string,
   min: number
@@ -60,7 +60,7 @@ interface DefaultSliderProps {
   activeDotStyle: CSSProperties,
 }
 
-type RequiredSliderProps = ObjectDiff<SliderProps, DefaultSliderProps>;
+export type RequiredSliderProps = ObjectDiff<SliderProps, DefaultSliderProps>;
 
 export class Slider extends React.Component<RequiredSliderProps> {
   static displayName = 'Slider';

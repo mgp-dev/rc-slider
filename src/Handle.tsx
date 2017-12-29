@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {CSSProperties} from 'react';
 import {Manager, Popper, Target} from 'react-popper';
 
@@ -16,7 +16,7 @@ export interface HandleProps {
   index: number
 }
 
-interface HandleState {
+export interface HandleState {
   tooltipVisible: boolean
 }
 

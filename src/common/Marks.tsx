@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import {CSSProperties} from 'react';
 import classNames from 'classnames';
 import {MarkOpt} from "./types";
 
-interface MarksProps {
+export interface MarksProps {
   className?: string
   vertical?: boolean
   marks: MarkOpt

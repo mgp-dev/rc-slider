@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {ClassAttributes, CSSProperties, ReactNode} from 'react';
 import classNames from 'classnames';
 import Track from './common/Track';
@@ -44,7 +44,7 @@ export interface RangeProps {
   activeDotStyle: CSSProperties,
 }
 
-interface DefaultRangeProps {
+export interface DefaultRangeProps {
   count: number,
   allowCross: boolean,
   pushable: boolean | number
@@ -72,7 +72,7 @@ interface DefaultRangeProps {
   activeDotStyle: CSSProperties,
 }
 
-interface RangeState {
+export interface RangeState {
   handle: any,
   recent: any,
   bounds: number[],

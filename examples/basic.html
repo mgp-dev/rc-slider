@@ -15,17 +15,16 @@
 <script src="../dist/rc-slider.umd.js"></script>
 <script type="text/es2015">
 
-
     const wrapperStyle = { width: 400, margin: 50 };
     ReactDOM.render(
       <div>
         <div style={wrapperStyle}>
-          <p>Slider with custom handle</p>
+          <p>Slider</p>
           <Slider.Slider min={0} max={20} defaultValue={3} />
         </div>
         <div style={wrapperStyle}>
-          <p>Range with custom handle</p>
-          <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
+          <p>Range with custom tooltip formatter</p>
+          <Slider.Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
         </div>
       </div>,
       document.getElementById('root')

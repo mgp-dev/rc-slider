@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import {CSSProperties} from "react";
 
@@ -18,7 +18,7 @@ const calcPoints = (vertical: boolean, marks: any, dots: any, step: number, min:
   return points;
 };
 
-interface StepsProps {
+export interface StepsProps {
   prefixCls?: string
   vertical: boolean
   marks?: any
